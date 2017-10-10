@@ -43,22 +43,6 @@ class MainActivity : AppCompatActivity() {
             _, _ -> true
         }
 
-        val  doWork: () -> String = {
-            "test"
-        }
-
-       /* val delegate = DelegateAsync(doWork, object: DelegateAsync.AsyncHandler<String> {
-            override fun onSuccess(result: String) {
-            }
-
-            override fun onError(e: Exception?) {
-            }
-
-        })*/
-
-        //delegate.start()
-
-
         async<String> {
             executeInBackground(this@MainActivity, object: BackgroundWork<String>{
                 override fun doinBackGround() = "hello world"
@@ -76,6 +60,11 @@ class MainActivity : AppCompatActivity() {
         Handler() now { this info ("Handler" to "Handled") }
 
         fireActivity(this, MainActivity::class.java){finish()}
+
+        Quadruple("hello", 1, "true", 3)
+
+        val hello = "Hello" and "world" combine  ("Steve" and "Jobs")
+        hello.toString()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
