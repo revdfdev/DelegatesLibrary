@@ -1,5 +1,6 @@
 package thepunkprogrammer.kotlindelegates
 
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.support.design.widget.Snackbar
@@ -8,6 +9,10 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
+import thepunkprogrammer.kotlindelegateasync.BackgroundWork
+import thepunkprogrammer.kotlindelegateasync.Completion
+import thepunkprogrammer.kotlindelegateasync.async
+import java.util.concurrent.Executor
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,17 +43,39 @@ class MainActivity : AppCompatActivity() {
             _, _ -> true
         }
 
+        val  doWork: () -> String = {
+            "test"
+        }
+
+       /* val delegate = DelegateAsync(doWork, object: DelegateAsync.AsyncHandler<String> {
+            override fun onSuccess(result: String) {
+            }
+
+            override fun onError(e: Exception?) {
+            }
+
+        })*/
+
+        //delegate.start()
+
+
+        async<String> {
+            executeInBackground(this@MainActivity, object: BackgroundWork<String>{
+                override fun doinBackGround() = "hello world"
+
+            }, object: Completion<String> {
+                override fun onerror(context: Context?, e: Exception?) {
+                }
+
+                override fun onsuccess(context: Context?, result: String?) {
+                }
+
+            })
+        }
 
         Handler() now { this info ("Handler" to "Handled") }
 
         fireActivity(this, MainActivity::class.java){finish()}
-
-
-
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

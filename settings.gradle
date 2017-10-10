@@ -1,1 +1,1 @@
-include ':app', ':kotlindelegates2'
+include ':app', ':kotlindelegates2', ':kotlindelegate-async'

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/KotlinDelegates.iml" filepath="$PROJECT_DIR$/KotlinDelegates.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kotlindelegate-async/kotlindelegate-async.iml" filepath="$PROJECT_DIR$/kotlindelegate-async/kotlindelegate-async.iml" />
       <module fileurl="file://$PROJECT_DIR$/kotlindelegates2/kotlindelegates2.iml" filepath="$PROJECT_DIR$/kotlindelegates2/kotlindelegates2.iml" />
     </modules>
   </component>
