@@ -1,6 +1,8 @@
 package thepunkprogrammer.kotlindelegates
 
 import android.content.Context
+import android.database.sqlite.SQLiteClosable
+import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.os.Handler
 import android.support.design.widget.Snackbar
@@ -12,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import thepunkprogrammer.kotlindelegateasync.BackgroundWork
 import thepunkprogrammer.kotlindelegateasync.Completion
 import thepunkprogrammer.kotlindelegateasync.async
+import java.net.ServerSocket
 import java.util.concurrent.Executor
 
 class MainActivity : AppCompatActivity() {
@@ -75,6 +78,13 @@ class MainActivity : AppCompatActivity() {
         1 until 1000 forEach {
             println(it)
         }
+
+
+        val socket = ServerSocket()
+        socket using {
+
+        }
+
         hello.toString()
     }
 
