@@ -64,6 +64,17 @@ class MainActivity : AppCompatActivity() {
         Quadruple("hello", 1, "true", 3)
 
         val hello = "Hello" and "world" combine  ("Steve" and "Jobs")
+        hello.toList() lastIndexOf "Jobs"
+
+        hello.toList() forEachIndexed { index, s ->
+            println(" $index and  $s")
+        }
+
+        hello.toList() indexOf "world"
+
+        1 until 1000 forEach {
+            println(it)
+        }
         hello.toString()
     }
 
